@@ -14,14 +14,14 @@ Ext.define('ExtMVC.store.Contatos', {
         },
         reader: {
             type: 'json',
-            root: 'contatos',
+            root: 'data',
             successProperty: 'success'
         },
         writer: {
             type: 'json',
             writeAllFields: true,
             encode: true,
-            root: 'contatos'
+            root: 'data'
         }
     }
 });

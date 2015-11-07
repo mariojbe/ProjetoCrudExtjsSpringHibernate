@@ -14,9 +14,9 @@ import br.org.abmnet.model.Contact;
  * Util class. Contains some common methods that can be used
  * for any class
  * 
- * @author Loiane Groner
- * http://loianegroner.com (English)
- * http://loiane.com (Portuguese)
+ * @author Mário Jorge
+ * 
+ * 
  */
 @Component
 public class Util {

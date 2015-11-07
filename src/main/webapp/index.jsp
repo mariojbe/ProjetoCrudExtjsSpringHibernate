@@ -1,30 +1,17 @@
+<!DOCTYPE html>
 <html>
-<head>
-	<title>CRUD ExtJS Grid</title>
-	
-	<!-- ExtJS css -->
-	<link rel="stylesheet" type="text/css" href="ext-3.2.1/resources/css/ext-all.css" />
-	
-	<!-- Row Editor plugin css -->
-	<link rel="stylesheet" type="text/css" href="ext-3.2.1/examples/ux/css/rowEditorCustom.css" />
-	<link rel="stylesheet" type="text/css" href="ext-3.2.1/examples/shared/examples.css" />
-	<link rel="stylesheet" type="text/css" href="ext-3.2.1/examples/ux/css/RowEditor.css" />
+    <head>
+        <title>Ext JS 4 Examples - loiane.com</title>
 
-	<!-- App custom css -->
-	<link rel="stylesheet" type="text/css" href="css/crudgrid.css" />
+        <!-- Ext JS Files -->
+        <link href="extjs/resources/css/ext-all.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="extjs/ext-all-debug.js"></script>
 
-	<!-- ExtJS js -->
-	<script src="ext-3.2.1/adapter/ext/ext-base.js"></script>
-	<script src="ext-3.2.1/ext-all.js"></script>
-	
-	<!-- Row Editor plugin js -->
-	<script src="ext-3.2.1/examples/ux/RowEditor.js"></script>
-	
-	<!-- App js -->
-	<script src="js/crud-grid.js"></script>
-	
-</head>
-<body>
-	<div id="crud-grid"></div>
-</body>
+        <!-- App Files -->
+        <link rel="stylesheet" type="text/css" href="resources/css/app.css">
+        <script src="js/app.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+    </body>
 </html>

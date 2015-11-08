@@ -70,8 +70,8 @@ Ext.define('ExtMVC.view.contato.Formulario', {
                         scope: this,
                         handler: function (btn) {
                             btn.up('window').down('form').getForm().reset();
-                            Ext.getCmp('name').focus(true,10);
-                        } 
+                            Ext.getCmp('name').focus(true, 10);
+                        }
                         //handler: this.close
                     }]
             }];

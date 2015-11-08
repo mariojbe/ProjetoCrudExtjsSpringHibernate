@@ -12,9 +12,9 @@ import br.org.abmnet.model.Contact;
 /**
  * Contact DAO class.
  * 
- * @author Loiane Groner
- * http://loianegroner.com (English)
- * http://loiane.com (Portuguese)
+ * @author Mário Jorge
+ * 
+ * 
  */
 @Repository
 public class ContactDAO implements IContactDAO{
@@ -41,7 +41,7 @@ public class ContactDAO implements IContactDAO{
 	 * @param id
 	 */
 	@Override
-	public void deleteContact(int id){
+	public void deleteContact(Integer id){
 		Object record = hibernateTemplate.load(Contact.class, id);
 		hibernateTemplate.delete(record);
 	}

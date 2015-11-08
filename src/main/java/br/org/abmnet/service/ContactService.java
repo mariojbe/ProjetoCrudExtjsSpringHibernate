@@ -1,6 +1,5 @@
 package br.org.abmnet.service;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +14,9 @@ import br.org.abmnet.util.Util;
 /**
  * Contact Service
  * 
- * @author Loiane Groner
- * http://loianegroner.com (English)
- * http://loiane.com (Portuguese)
+ * @author Mário Jorge
+ *
+ * 
  */
 @Service
 public class ContactService {

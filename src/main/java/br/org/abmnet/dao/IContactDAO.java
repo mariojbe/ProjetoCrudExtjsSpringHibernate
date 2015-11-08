@@ -8,7 +8,7 @@ public interface IContactDAO {
 
 	List<Contact> getContacts();
 	
-	void deleteContact(int id);
+	void deleteContact(Integer id);
 	
 	Contact saveContact(Contact contact);
 	

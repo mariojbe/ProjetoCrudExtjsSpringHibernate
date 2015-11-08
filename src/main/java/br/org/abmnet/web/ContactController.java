@@ -76,7 +76,7 @@ public class ContactController  {
 
 			contactService.delete(data);
 
-			Map<String,Object> modelMap = new HashMap<String,Object>(3);
+			Map<String,Object> modelMap = new HashMap<>(3);
 			modelMap.put("success", true);
 
 			return modelMap;

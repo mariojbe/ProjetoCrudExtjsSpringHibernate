@@ -39,7 +39,7 @@ public class Util {
 
 			Contact contact = getContactFromJSON(data);
 
-			list = new ArrayList<Contact>();
+			list = new ArrayList<>();
 			list.add(contact);
 		}
 

@@ -10,7 +10,7 @@ Ext.define('ExtMVC.store.Contatos', {
             create: 'contact/create.action',
             read: 'contact/view.action',
             update: 'contact/update.action',
-            destroy: 'contact/delete.action',
+            destroy: 'contact/delete.action'
         },
         reader: {
             type: 'json',

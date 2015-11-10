@@ -68,7 +68,7 @@ public class ContactController  {
 			return getModelMapError("Erro ao tentar atualizar contato.");
 		}
 	}
-	
+
 	@RequestMapping(value="/contact/delete.action")
 	public @ResponseBody Map<String,? extends Object> delete(@RequestParam Object data) throws Exception {
 		

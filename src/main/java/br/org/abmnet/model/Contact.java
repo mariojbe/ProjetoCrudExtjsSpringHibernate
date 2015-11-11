@@ -11,13 +11,13 @@ import org.codehaus.jackson.annotate.JsonAutoDetect;
 /**
  * Contact POJO
  * 
- * @author Loiane Groner
- * http://loianegroner.com (English)
- * http://loiane.com (Portuguese)
+ * @author Mário Jorge
+ * 
+ * 
  */
 @JsonAutoDetect
 @Entity
-@Table(name="CONTACT")
+@Table(name="CONTACT", catalog = "demo")
 public class Contact {
 	
 	private int id;

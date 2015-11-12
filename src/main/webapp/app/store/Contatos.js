@@ -4,6 +4,7 @@ Ext.define('ExtMVC.store.Contatos', {
     autoLoad: true,
     pageSize: 35,
     autoLoad: {start: 0, limit: 35},
+    autoSave: false,
     proxy: {
         type: 'ajax',
         api: {
@@ -21,7 +22,8 @@ Ext.define('ExtMVC.store.Contatos', {
             type: 'json',
             writeAllFields: true,
             encode: true,
-            root: 'data'
+            root: 'data',
+            allowSingle: false
         }
     }
 });

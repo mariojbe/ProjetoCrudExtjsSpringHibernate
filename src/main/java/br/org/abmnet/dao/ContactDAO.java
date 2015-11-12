@@ -41,9 +41,9 @@ public class ContactDAO implements IContactDAO{
 	 * @param id
 	 */
 	@Override
-	public void deleteContact(Integer id){
-		Object record = hibernateTemplate.load(Contact.class, id);
-		hibernateTemplate.delete(record);
+	public void deleteContact(int id){
+		Object data = hibernateTemplate.load(Contact.class, id);
+		hibernateTemplate.delete(data);
 	}
 	
 	/**

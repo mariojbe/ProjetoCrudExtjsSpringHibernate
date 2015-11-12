@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.org.abmnet.test;
 
 import br.org.abmnet.dao.ContactDAO;
@@ -21,8 +16,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
  * @author Mário Jorge
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"file*:src/main/webapp/WEB-INF/spring/app-config*.xml",
-                                   "file*:src/main/webapp/WEB-INF/spring/db-config*.xml"})
+@ContextConfiguration(locations = {"file*:src/main/webapp/WEB-INF/spring/app-config*.xml"})
 @Transactional
 @TransactionConfiguration(defaultRollback = false)
 public class ContatoTest {

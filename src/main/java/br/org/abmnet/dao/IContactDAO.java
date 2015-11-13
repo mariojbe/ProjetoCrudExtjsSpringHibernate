@@ -12,4 +12,5 @@ public interface IContactDAO {
 	
 	Contact saveContact(Contact contact);
 	
+        public boolean removeContact(Contact contact);
 }

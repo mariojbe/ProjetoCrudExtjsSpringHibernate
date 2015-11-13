@@ -76,14 +76,18 @@ public class ContactController {
     public @ResponseBody
     Map<String, ? extends Object> delete(@RequestParam Object data) throws Exception {
 
+        Map response = new HashMap();
+        
         try {
 
             contactService.delete(data);
+           
+            response.put("success", true);
 
-            Map<String, Object> modelMap = new HashMap<>(3);
-            modelMap.put("success", true);
+            //Map<String, Object> modelMap = new HashMap<>(3);
+            //modelMap.put("success", true);
 
-            return modelMap;
+            return response;
 
         } catch (Exception e) {
 
@@ -99,7 +103,7 @@ public class ContactController {
      */
     private Map<String, Object> getMap(List<Contact> contacts) {
 
-        Map<String, Object> modelMap = new HashMap<String, Object>(3);
+        Map<String, Object> modelMap = new HashMap<>(3);
         modelMap.put("total", contacts.size());
         modelMap.put("data", contacts);
         modelMap.put("success", true);
@@ -115,7 +119,7 @@ public class ContactController {
      */
     private Map<String, Object> getModelMapError(String msg) {
 
-        Map<String, Object> modelMap = new HashMap<String, Object>(2);
+        Map<String, Object> modelMap = new HashMap<>(2);
         modelMap.put("message", msg);
         modelMap.put("success", false);
 

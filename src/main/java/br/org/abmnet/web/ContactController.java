@@ -1,6 +1,5 @@
 package br.org.abmnet.web;
 
-import br.org.abmnet.dao.ContactDAO;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,10 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.org.abmnet.model.Contact;
 import br.org.abmnet.service.ContactService;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Controller - Spring
@@ -29,7 +24,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class ContactController {
 
     private ContactService contactService;
-    private ContactDAO contactDAO;
 
     @RequestMapping(value = "/contact/view.action")
     public @ResponseBody
@@ -78,44 +72,24 @@ public class ContactController {
         }
     }
 
-    public ModelAndView delete(HttpServletRequest request,
-            HttpServletResponse response) throws Exception {
+    @RequestMapping(value = "/contact/delete.action")
+    public @ResponseBody
+    Map<String, ? extends Object> delete(@RequestParam Object data) throws Exception {
 
         try {
 
-            String data = request.getParameter("data");
-
             contactService.delete(data);
 
-            Map<String, Object> modelMap = new HashMap<String, Object>(3);
+            Map<String, Object> modelMap = new HashMap<>(3);
             modelMap.put("success", true);
 
-            return new ModelAndView("jsonView", modelMap);
+            return modelMap;
 
         } catch (Exception e) {
 
-            return (ModelAndView) getModelMapError("Error trying to delete contact.");
+            return getModelMapError("Erro ao tentar excluir contatos.");
         }
     }
-    /*
-     @RequestMapping(value = "/contact/delete.action", method = RequestMethod.POST)
-     public @ResponseBody
-     Map<String, ? extends Object> delete(@RequestParam Object data) throws Exception {
-
-     try {
-
-     contactService.delete(data);;
-
-     Map<String, Object> modelMap = new HashMap<>(3);
-     modelMap.put("success", true);
-
-     return modelMap;
-
-     } catch (Exception e) {
-
-     return getModelMapError("Erro ao tentar excluir contatos.");
-     }
-     }*/
 
     /**
      * Generates modelMap to return in the modelAndView

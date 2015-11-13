@@ -11,74 +11,78 @@ import org.springframework.stereotype.Component;
 import br.org.abmnet.model.Contact;
 
 /**
- * Util class. Contains some common methods that can be used
- * for any class
- * 
+ * Util class. Contains some common methods that can be used for any class
+ *
  * @author Mário Jorge
- * 
- * 
+ *
+ *
  */
 @Component
 public class Util {
-	
-	/**
-	 * Get list of Contacts from request.
-	 * @param data - json data from request 
-	 * @return list of Contacts
-	 */
-	public List<Contact> getContactsFromRequest(Object data){
 
-		List<Contact> list;
+    /**
+     * Get list of Contacts from request.
+     *
+     * @param data - json data from request
+     * @return list of Contacts
+     */
+    public List<Contact> getContactsFromRequest(Object data) {
 
-		//it is an array - have to cast to array object
-		if (data.toString().indexOf('[') > -1){
+        List<Contact> list;
 
-			list = getListContactsFromJSON(data);
+        //it is an array - have to cast to array object
+        if (data.toString().indexOf('[') > -1) {
 
-		} else { //it is only one object - cast to object/bean
+            list = getListContactsFromJSON(data);
 
-			Contact contact = getContactFromJSON(data);
+        } else { //it is only one object - cast to object/bean
 
-			list = new ArrayList<>();
-			list.add(contact);
-		}
+            Contact contact = getContactFromJSON(data);
 
-		return list;
-	}
+            list = new ArrayList<>();
+            list.add(contact);
+        }
 
-	/**
-	 * Transform json data format into Contact object
-	 * @param data - json data from request
-	 * @return 
-	 */
-	private Contact getContactFromJSON(Object data){
-		JSONObject jsonObject = JSONObject.fromObject(data);
-		Contact newContact = (Contact) JSONObject.toBean(jsonObject, Contact.class);
-		return newContact;
-	}
+        return list;
+    }
 
-	/**
-	 * Transform json data format into list of Contact objects
-	 * @param data - json data from request
-	 * @return
-	 */
-	@SuppressWarnings("unchecked")
-	private List<Contact> getListContactsFromJSON(Object data){
-		JSONArray jsonArray = JSONArray.fromObject(data);
-		List<Contact> newContacts = (List<Contact>) JSONArray.toCollection(jsonArray,Contact.class);
-		return newContacts;
-	}
+    /**
+     * Transform json data format into Contact object
+     *
+     * @param data - json data from request
+     * @return
+     */
+    private Contact getContactFromJSON(Object data) {
+        JSONObject jsonObject = JSONObject.fromObject(data);
+        Contact newContact = (Contact) JSONObject.toBean(jsonObject, Contact.class);
+        return newContact;
+    }
 
-	/**
-	 * Tranform array of numbers in json data format into
-	 * list of Integer
-	 * @param data - json data from request
-	 * @return
-	 */
-	@SuppressWarnings("unchecked")
-	public List<Integer> getListIdFromJSON(Object data){
-		JSONArray jsonArray = JSONArray.fromObject(data);
-		List<Integer> idContacts = (List<Integer>) JSONArray.toCollection(jsonArray,Integer.class);
-		return idContacts;
-	}
+    /**
+     * Transform json data format into list of Contact objects
+     *
+     * @param data - json data from request
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    private List<Contact> getListContactsFromJSON(Object data) {
+        JSONArray jsonArray = JSONArray.fromObject(data);
+        List<Contact> newContacts = (List<Contact>) JSONArray.toCollection(jsonArray, Contact.class);
+        return newContacts;
+    }
+
+    /**
+     * Tranform array of numbers in json data format into list of Integer
+     *
+     * @param data - json data from request
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public List<Integer> getListIdFromJSON(Object data) {
+        JSONArray jsonArray = JSONArray.fromObject(data);
+        List<Integer> idContacts;
+        idContacts = (List<Integer>) JSONArray.toCollection(jsonArray, Integer.class);
+        return idContacts;
+    }
+
 }

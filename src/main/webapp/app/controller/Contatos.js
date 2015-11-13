@@ -53,7 +53,7 @@ Ext.define('ExtMVC.controller.Contatos', {
 
         win.close();
         this.getContatosStore().sync();
-        this.getContatosStore().load();
+        //this.getContatosStore().load();
 
         if (novo) { //faz reload para atualziar
             this.getContatosStore().load();
@@ -91,5 +91,5 @@ Ext.define('ExtMVC.controller.Contatos', {
             });
         }
     }
-    
-     });
+
+});

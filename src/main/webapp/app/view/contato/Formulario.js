@@ -8,6 +8,9 @@ Ext.define('ExtMVC.view.contato.Formulario', {
     width: 280,
     iconCls: 'icon-user',
     initComponent: function () {
+        
+        var required = '<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';
+        
         this.items = [
             {
                 xtype: 'form',
@@ -31,6 +34,7 @@ Ext.define('ExtMVC.view.contato.Formulario', {
                     {
                         xtype: 'textfield',
                         name: 'name',
+                        afterLabelTextTpl: required,
                         id: 'name',
                         fieldLabel: 'Nome',
                         listeners: {
@@ -47,6 +51,7 @@ Ext.define('ExtMVC.view.contato.Formulario', {
                     {
                         xtype: 'textfield',
                         name: 'email',
+                        afterLabelTextTpl: required,
                         fieldLabel: 'Email',
                         vtype: 'email'
                     }
